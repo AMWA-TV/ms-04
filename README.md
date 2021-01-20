@@ -9,7 +9,7 @@ AMWA MS-04 is an AMWA Data Model Specification for identity and timing that appl
 
 Readers are advised to be familiar with:
 - The [JT-NM Reference Architecture](http://jt-nm.org/RA-1.0/)
-- The [overview of Networked Media Open Specifications](https://amwa-tv.github.io/nmos)
+- The [overview of Networked Media Open Specifications](https://specs.amwa.tv/nmos)
 - The [NMOS wiki](https://github.com/AMWA-TV/nmos/wiki)
 
 Readers should read the [documentation](docs/) in this repository, starting with the [Overview](docs/1.0.%20Overview.md).
