@@ -14,7 +14,7 @@ Readers are advised to be familiar with:
 
 Readers should read the [documentation](docs/) in this repository, starting with the [Overview](docs/1.0.%20Overview.md).
 
-> HTML rendered versions of all NMOS Specifications are available on the [NMOS GitHub pages](https://amwa-tv.github.io/nmos)
+> HTML rendered versions of all NMOS Specifications are available at <https://specs.amwa.tv/nmos>
 
 ## Releases
 
