@@ -6,7 +6,7 @@
 
 The NMOS identity and timing activity was started in order to define an identity and timing model for audio, video and data. The resulting model is intended to be used across the NMOS family of specifications where 'content' needs to be modelled.
 
-The primary focus of the activity was in the area of Sources, Flows and Grains identified within the [JT-NM Reference Architecture](http://www.jt-nm.org/RA-1.0/). It examined their identity and timing characteristics, identifying how aspects should be constrained in order to permit interoperable implementations capable of meeting the needs of the project's user stories. Further details can be found in the [Project Proposal](ProjectProposal.pdf).
+The primary focus of the activity was in the area of Sources, Flows and Grains identified within the [JT-NM Reference Architecture](http://www.jt-nm.org/reference-architecture/). It examined their identity and timing characteristics, identifying how aspects should be constrained in order to permit interoperable implementations capable of meeting the needs of the project's user stories. Further details can be found in the [Project Proposal](ProjectProposal.pdf).
 
 Whilst the concepts of Sources and Flows had already been used in NMOS specifications (most notably IS-04) for a significant period, a growing desire to be able to represent end-to-end identity and timing in production systems required a more formal and separable specification.
 
