@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-id-timing-model/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-id-timing-model/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-id-timing-model/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-id-timing-model/actions?query=workflow%3ARender)
 
-[//]: # "INTRO-START"
+<!-- INTRO-START -->
 
 ### What does it do?
 
@@ -20,7 +20,7 @@
 - Provides further explanation of their meaning
 - Gives guidance on how they can be used for media operations
 
-[//]: # "INTRO-END"
+<!-- INTRO-END -->
 
 ## Getting started
 
