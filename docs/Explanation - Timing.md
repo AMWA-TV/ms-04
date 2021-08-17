@@ -1,13 +1,13 @@
 # Explanation &ndash; Timing
 
-*Please ensure you have read the [Summary and Definitions](2.1.%20Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
+*Please ensure you have read the [Summary and Definitions](Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
 
 The model for a `Flow` associates time information with the data (each `Entry` associates a `Time Value` with a `Data Object`). This time information serves a number of purposes:
 * A `Time Value` can be used to identify a `Data Object` within a time series of `Data Object`s.
 * `Time Value`s define an ordering relationship on the data. An event happens before another event if the `Time Value` of the first event is less than the second event.
 * `Time Value`s provide an offset relationship between `Data Object`s. The time difference between events is the time that elapsed between those events.
 
-Note: Further discussion of `Time Value` uniqueness within a `Flow` can be found in [4.0. Appendix - Commentary](4.0.%20Appendix%20-%20Commentary.md#address-time-value-uniqueness-in-flows).
+Note: Further discussion of `Time Value` uniqueness within a `Flow` can be found in [4.0. Appendix - Commentary](Appendix%20-%20Commentary.md#address-time-value-uniqueness-in-flows).
 
 In certain scenarios the `Time Value`s have a relation to the real world time as we perceive it; and these `Time Value`s might indicate when the events happened.
 
@@ -26,7 +26,7 @@ Some example `Time Context`s:
 
 A number of `Flow`s might use a single `Time Context`. But this `Time Context` is not necessarily the primary or intended synchronisation relationship.
 
-For example, a Studio and a contribution from an Outside Broadcast share the `Time Context` defined as TAI time from the SMPTE epoch; that is, the `Time Value`s in the Studio and Outside Broadcast are the same when content is captured at the same instant in time. However, it is likely that a re-timing component will be used at the Studio boundary to re-time the Outside Broadcast content so that it can be directly mixed with the studio content. So, content is sometimes re-timed even when it uses a shared `Time Context`. Refer to [3.3. Media Production Chains](3.3.%20Media%20Production%20Chains.md) for more details on this example.
+For example, a Studio and a contribution from an Outside Broadcast share the `Time Context` defined as TAI time from the SMPTE epoch; that is, the `Time Value`s in the Studio and Outside Broadcast are the same when content is captured at the same instant in time. However, it is likely that a re-timing component will be used at the Studio boundary to re-time the Outside Broadcast content so that it can be directly mixed with the studio content. So, content is sometimes re-timed even when it uses a shared `Time Context`. Refer to [3.3. Media Production Chains](Media%20Production%20Chains.md) for more details on this example.
 
 
 ## Representation of `Time Value`s

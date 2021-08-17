@@ -1,6 +1,6 @@
 # Explanation &ndash; `Flow Representation`
 
-*Please ensure you have read the [Summary and Definitions](2.1.%20Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
+*Please ensure you have read the [Summary and Definitions](Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
 
 ## Understanding the `Flow Representation` Entity
 

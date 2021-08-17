@@ -1,10 +1,10 @@
 # Explanation &ndash;`Source`
 
-*Please ensure you have read the [Summary and Definitions](2.1.%20Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
+*Please ensure you have read the [Summary and Definitions](Summary%20and%20Definitions.md) before considering the further detail covered by this page.*
 
 ## Understanding the `Source` Entity
 
-The intention is that a `Source` (identified by a `Source` ID) provides an easy and convenient way to refer to a time-based signal or content in a manner that is agnostic to the means used to express it and the exact quality / accuracy of the expression. This use of the term `Source` should not be confused with the casual use of the word source to refer to multiple media signals relevant to an 'outside source' or similar (see [the Appendix](4.0.%20Appendix%20-%20Commentary.md#use-of-the-terms-source-and-flow)).
+The intention is that a `Source` (identified by a `Source` ID) provides an easy and convenient way to refer to a time-based signal or content in a manner that is agnostic to the means used to express it and the exact quality / accuracy of the expression. This use of the term `Source` should not be confused with the casual use of the word source to refer to multiple media signals relevant to an 'outside source' or similar (see [the Appendix](Appendix%20-%20Commentary.md#use-of-the-terms-source-and-flow)).
 
 It is useful to appreciate that a `Source` represents what its member `Flow`s have in common &ndash; that is, the time-based data that they all represent. The `Source` entity allows the content to be referred to without needing to refer to a specific `Flow`. In some scenarios it might be helpful to think of the `Source` as identifying the result of running a particular query on the ancestry relationships associated with a collection of `Flow`s.
 
@@ -31,7 +31,7 @@ In each scenario the two `Flow`s are expressions of a single `Source` &ndash; th
 
 It is important to understand that a `Source` cannot be used to describe arbitrary similarities between `Flow`s: all `Flow`s that are expressions of a `Source` must "appear the same" when rendered / decoded (other than differences in quality / accuracy). Additional `Flow`s that are similar but do not meet this constraint will need to be associated with a different `Source`; other mechanisms will then be needed to describe the similarity between these `Source`s.
 
-Guidance on how `Source`s can be applied to the handling of video and audio can be found in [3.0. Practical Guidance for Media](3.0.%20Practical%20Guidance%20for%20Media.md)
+Guidance on how `Source`s can be applied to the handling of video and audio can be found in [3.0. Practical Guidance for Media](Practical%20Guidance%20for%20Media.md)
 
 
 ## Notes on the Formal Definition of `Source`

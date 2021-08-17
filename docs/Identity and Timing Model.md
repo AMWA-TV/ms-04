@@ -4,7 +4,7 @@ This section covers the detail of the MS-04 model itself. The concepts which are
 
 The following areas are covered:
 
-## [Summary and Definitions](2.1.%20Summary%20and%20Definitions.md)
+## [Summary and Definitions](Summary%20and%20Definitions.md)
 
 An introduction to each of the modelled entities and how they relate to each other.
 
@@ -12,18 +12,18 @@ An introduction to each of the modelled entities and how they relate to each oth
 
 In-depth descriptions of the following model concepts:
 
-### [Explanation - `Source`](2.2.%20Explanation%20-%20Source.md)
+### [Explanation - `Source`](Explanation%20-%20Source.md)
 
-### [Explanation - `Flow`](2.3.%20Explanation%20-%20Flow.md)
+### [Explanation - `Flow`](Explanation%20-%20Flow.md)
 
-### [Explanation - `Flow Representation`](2.4.%20Explanation%20-%20Flow%20Representation.md)
+### [Explanation - `Flow Representation`](Explanation%20-%20Flow%20Representation.md)
 
-### [Explanation - Timing](2.5.%20Explanation%20-%20Timing.md)
+### [Explanation - Timing](Explanation%20-%20Timing.md)
 
 ## Extension
 
 Descriptions of further concepts which act as extensions to the core of the model. These concepts would typically be required in order to fulfil more advanced content modelling use cases:
 
-### [Extension - Ancestry](2.6.%20Extension%20-%20Ancestry.md)
+### [Extension - Ancestry](Extension%20-%20Ancestry.md)
 
-### [Extension - Grouping](2.7.%20Extension%20-%20Grouping.md)
+### [Extension - Grouping](Extension%20-%20Grouping.md)

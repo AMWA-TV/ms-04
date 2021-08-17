@@ -23,7 +23,7 @@ The JT-NM Reference Architecture contains the following definitions, with simila
 
 > "Flow": a sequence of Grains from a source; a concrete representation of content emanating from the Source
 
-This specification extends these definitions whilst attempting to remain compatible with them in order to clarify their intended usage within NMOS specifications. Justification for these extensions and clarifications is contained within the [Explanation - `Source`](2.2.%20Explanation%20-%20Source.md) and [Explanation - `Flow`](2.3.%20Explanation%20-%20Flow.md) documents.
+This specification extends these definitions whilst attempting to remain compatible with them in order to clarify their intended usage within NMOS specifications. Justification for these extensions and clarifications is contained within the [Explanation - `Source`](Explanation%20-%20Source.md) and [Explanation - `Flow`](Explanation%20-%20Flow.md) documents.
 
 In the JT-NM Reference Architecture, Grains are used as a way to attach pieces of timing information to pieces of data. Further work is needed to provide guidance on how Grains are handled using this model &ndash; see below.
 

@@ -6,17 +6,17 @@ This section aims to provide a practical set of building blocks for conveying id
 
 The following key areas are covered:
 
-## [Basic Media Operations](3.1.%20Basic%20Media%20Operations.md)
+## [Basic Media Operations](Basic%20Media%20Operations.md)
 
 Fundamental media processing operations and how these very granular actions affect the identity and timing of content.
 
-## [Composite Media Operations](3.2.%20Composite%20Media%20Operations.md)
+## [Composite Media Operations](Composite%20Media%20Operations.md)
 
 How the fundamental media processing operations can be combined in order to represent common pieces of production equipment and systems.
 
 Includes details on how chains of identity can be optimised in order to reduce complexity in implementation.
 
-## [Media Production Chains](3.3.%20Media%20Production%20Chains.md)
+## [Media Production Chains](Media%20Production%20Chains.md)
 
 Examples of how identity and timing can be persisted through production chains, including the requirements for the handling of this information at system boundaries.
 

@@ -55,7 +55,7 @@ A `Time Value` is a precise (zero duration) instant in time. A `Time Value` is m
 
 A `Time Context` establishes a common zero-point: within a specified `Time Context` all events at a given `Time Value` are considered to be synchronised.
 
-[Further explanation is provided about timing](2.5.%20Explanation%20-%20Timing.md)
+[Further explanation is provided about timing](Explanation%20-%20Timing.md)
 
 ### `Flow` (including `Data Object`s and `Entry`s)
 
@@ -69,16 +69,16 @@ Additionally:
 * All of the `Data Object`s in a `Flow` have the same data type. That is, for all of the `Data Object`s in a `Flow` the same means of encoding (and also interpreting) the data is used.
 * All of the `Time Value`s are in the same `Time Context`.
 
-[Further explanation is provided about `Flow`s](2.3.%20Explanation%20-%20Flow.md)
+[Further explanation is provided about `Flow`s](Explanation%20-%20Flow.md)
 
-[Notes on the relationship between Grains and `Entry`s](4.0.%20Appendix%20-%20Commentary.md#address-mapping-of-the-identity-and-timing-model-to-grains)
+[Notes on the relationship between Grains and `Entry`s](Appendix%20-%20Commentary.md#address-mapping-of-the-identity-and-timing-model-to-grains)
 
 ### `Flow Representation`
 
 * A `Flow Representation` is a concrete implementation of exactly one `Flow`. It is a practical communication of the `Data Object`s and `Time Value`s defined by this `Flow`.
 * For a `Flow`, any differences in the data communicated by its `Flow Representation`s must be considered negligible for the intended purpose.
 
-[Further explanation is provided about `Flow Representation`s](2.4.%20Explanation%20-%20Flow%20Representation.md)
+[Further explanation is provided about `Flow Representation`s](Explanation%20-%20Flow%20Representation.md)
 
 ### `Source`
 
@@ -88,4 +88,4 @@ Additionally:
   * "appear the same" when rendered / decoded (other than differences in quality / accuracy).
   * use the same `Time Context`.
 
-[Further explanation is provided about `Source`s](2.2.%20Explanation%20-%20Source.md)
+[Further explanation is provided about `Source`s](Explanation%20-%20Source.md)

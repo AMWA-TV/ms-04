@@ -22,14 +22,14 @@ This Specification defines a model for identity and timing, with guidance on how
 
 The documentation is split into three sections as follows:
 
-### [2.0. Identity and Timing Model](2.0.%20Identity%20and%20Timing%20Model.md)
+### [2.0. Identity and Timing Model](Identity%20and%20Timing%20Model.md)
 
 The identity and timing model and in-depth description of its concepts.
 
-### [3.0. Practical Guidance for Media](3.0.%20Practical%20Guidance%20for%20Media.md)
+### [3.0. Practical Guidance for Media](Practical%20Guidance%20for%20Media.md)
 
 Guidance on how to apply the model to media, considering common equipment and scenarios.
 
-### [4.0. Appendix - Commentary](4.0.%20Appendix%20-%20Commentary.md)
+### [4.0. Appendix - Commentary](Appendix%20-%20Commentary.md)
 
 Background information on how the model was developed, and details of further work required.
