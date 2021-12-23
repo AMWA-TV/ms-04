@@ -1,0 +1,11 @@
+amwa_id: MS-04
+url: https://specs.amwa.tv/ms-04
+name: ID & Timing Model
+status: AMWA Specification
+repo_name: ms-04
+alt_repo_name: nmos-id-timing-model
+repo_url: https://github.com/AMWA-TV/ms-04
+releases:
+  - v1.0.0
+default_branch: v1.0.x
+show_in_index: true
