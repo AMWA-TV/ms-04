@@ -1,0 +1,2137 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/ms-04/v1.0.0/3.1.%20Basic%20Media%20Operations/">
+      
+      
+        <link rel="prev" href="../3.0.%20Practical%20Guidance%20for%20Media/">
+      
+      
+        <link rel="next" href="../3.2.%20Composite%20Media%20Operations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>Basic Media Operations - AMWA MS-04 NMOS Identity and Timing Model Specification</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-media-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA MS-04 NMOS Identity and Timing Model Specification" class="md-header__button md-logo" aria-label="AMWA MS-04 NMOS Identity and Timing Model Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA MS-04 NMOS Identity and Timing Model Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basic Media Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/ms-04" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/ms-04
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA MS-04 NMOS Identity and Timing Model Specification" class="md-nav__button md-logo" aria-label="AMWA MS-04 NMOS Identity and Timing Model Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA MS-04 NMOS Identity and Timing Model Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/ms-04" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/ms-04
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA MS-04 NMOS Identity and Timing Model Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.%20Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA MS-04 NMOS Identity and Timing Model Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0.%20Identity%20and%20Timing%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Identity and Timing Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1.%20Summary%20and%20Definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Identity and Timing Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2.%20Explanation%20-%20Source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash;Source
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3.%20Explanation%20-%20Flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash;Flow
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4.%20Explanation%20-%20Flow%20Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash; Flow Representation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.5.%20Explanation%20-%20Timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash; Timing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.6.%20Extension%20-%20Ancestry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension &ndash; Ancestry
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.7.%20Extension%20-%20Grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension &ndash; Grouping
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0.%20Practical%20Guidance%20for%20Media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Practical Guidance for Media
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Media Operations
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Media Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-source-or-flow-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        No <code>Source</code> or <code>Flow</code> Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:0 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:0 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-new-flow-id-no-new-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        No New <code>Flow</code> ID, No New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-same-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, Same <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1..*:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1..*:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:1..* <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:1..* Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-ids-new-source-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> IDs, New <code>Source</code> IDs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2.%20Composite%20Media%20Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Composite Media Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3.%20Media%20Production%20Chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Media Production Chains
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.0.%20Appendix%20-%20Commentary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Appendix - Commentary
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Archive
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Archive
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Archive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Ancestry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ancestry
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Flow &ndash; defining &amp; understanding it
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Source &ndash; defining &amp; understanding it
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/definitions--Similarity-Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Similarity Cluster
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Core Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Data_Object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Data Objects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--TDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Timed Data Structures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--TVI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of TVIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Time_Context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Time Contexts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Time_Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Time Values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/explanation-and-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation / Principles / Approach to designing the model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/media_operations--analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Purpose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/media_operations--summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Production Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Motivation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Data_Object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Data Objects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Similarity-Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Similarity Clusters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--TDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Timed Data Structures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--TVI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on TVIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Time_Context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Time Contexts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Time_Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Time Values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/user-stories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Timing &amp; Identity User Stories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_24" id="__nav_16_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application notes
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_24">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Application notes
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Notes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/1-live-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Live Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/2-live-file-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Live &amp; File Playout Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/3-split-essence-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Split Essence Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/4-api-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. API Access
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-source-or-flow-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        No <code>Source</code> or <code>Flow</code> Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:0 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:0 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-new-flow-id-no-new-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        No New <code>Flow</code> ID, No New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-same-source-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, Same <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1..*:1 <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1..*:1 Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-id-new-source-id_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> ID, New <code>Source</code> ID
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-flow_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1:1..* <code>Flow</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1:1..* Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-flow-ids-new-source-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New <code>Flow</code> IDs, New <code>Source</code> IDs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="basic-media-operations">Basic Media Operations</h1>
+<p>This document explores a range of common production operations and the requirements for tracking identity and timing through them. Each granular operation is described and will be referred to in further documents.</p>
+<p>This document is not intended to be an exhaustive set of potential operations. However, for any additional operation this document should be sufficient to provide an indication of how to treat it (in terms of its handling of identity and timing).</p>
+<p>The headings below state how identity and timing must change as content is handled by the listed operations. The operations are grouped by the number of <code>Flow</code>s which are input to and output from the operation purely for convenience in documenting them. For example, '1..*:1 <code>Flow</code>' indicates a 'many to one' operation where multiple input <code>Flow</code>s are combined in order to produce one output <code>Flow</code>.</p>
+<p>These identity changes should be applied in any cases where a process has the potential to make a change to the content, even if it is not currently doing so. For example, a vision switcher's output should be identified with its own <code>Source</code> ID, even if it is currently acting as a pass-through for a single input.</p>
+<h2 id="no-source-or-flow-changes">No <code>Source</code> or <code>Flow</code> Changes</h2>
+<p>The following operations result in no change made to the content's existing identity or timing data. They are however likely to generate one or more new <code>Flow Representation</code>s of the same <code>Flow</code>.</p>
+<ul>
+<li><strong>Storage Read / Write</strong><ul>
+<li>Reads or writes content to/from disk with no changes made to its <code>Data Object</code>s or <code>Time Value</code>s.</li>
+</ul>
+</li>
+<li><strong>Stored Content Playback &ndash; Retrieve Only</strong><ul>
+<li>Retrieves data from a store in order to play it back without making modifications to its <code>Time Value</code>s.</li>
+</ul>
+</li>
+<li><strong>Internal Conversion</strong><ul>
+<li>Modifies the byte packing or other aspect of a piece of content in a completely reversible fashion (into a new <code>Flow Representation</code>), before returning it to its original state and providing it back to the user or system as an output.</li>
+</ul>
+</li>
+<li><strong>Data Transfer</strong><ul>
+<li>Transmission of a piece of content over a link. The content might be re-packed into a new <code>Flow Representation</code> for transmission over the link but is converted back to its original state before being returned to the user or system on the receiving end.</li>
+</ul>
+</li>
+<li><strong>Buffering &amp; Latency</strong><ul>
+<li>A time delay caused either intentionally or as a side effect of a processing or transmission operation. This delay makes no modifications to the <code>Time Value</code>s associated with the content.</li>
+</ul>
+</li>
+</ul>
+<h2 id="01-flow">0:1 <code>Flow</code></h2>
+<p><img alt="Input" src="../images/3.1-Input.png" /></p>
+<h3 id="new-flow-id-new-source-id">New <code>Flow</code> ID, New <code>Source</code> ID</h3>
+<p>The following operations result in the generation of new <code>Time Value</code>s in an appropriate <code>Time Context</code>.</p>
+<ul>
+<li><strong>Capture</strong><ul>
+<li>Converts light, sound or other physical inputs into a digital signal or creates purely synthesised content. This operation is intended to signify the point at which practically processable content comes into being, or the first point in the system where identity and timing data can be associated with it.</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-flow">1:0 <code>Flow</code></h2>
+<p><img alt="Output" src="../images/3.1-Output.png" /></p>
+<h3 id="no-new-flow-id-no-new-source-id">No New <code>Flow</code> ID, No New <code>Source</code> ID</h3>
+<p>The following operations transition content into an environment outside of the scope of the identity and timing model.</p>
+<ul>
+<li><strong>Output</strong><ul>
+<li>Converts a digital signal into light, sound or other physical outputs. This operation is intended to signify the point at which content transitions to no longer being practically processable, or the transition out of an environment which is capable of carrying identity and timing data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-flow">1:1 <code>Flow</code></h2>
+<p><img alt="Process" src="../images/3.1-Process.png" /></p>
+<h3 id="new-flow-id-new-source-id_1">New <code>Flow</code> ID, New <code>Source</code> ID</h3>
+<p>These operations can be broadly summarised as performing one of the following actions:
+*   Content is fundamentally modified
+*   Content is re-timed
+*   New content is created from a single input</p>
+<p>The following operations might modify the content's <code>Time Value</code>s and/or associated <code>Time Context</code>. Where applicable this action is described.</p>
+<ul>
+<li><strong>Slow Motion / Speed Up</strong><ul>
+<li>Takes content which was recorded at a specific rate and plays it back at a faster or slower rate as desired (that is, its duration and its <code>Time Value</code>s are changed). This maintains a 1:1 relationship between input and output <code>Data Object</code>s and so must not include frame drops / repeats or interpolation between frames.</li>
+</ul>
+</li>
+<li><strong>Stored Content Playback &ndash; Retrieve and Re-Time</strong><ul>
+<li>Retrieves data from a store before modifying its <code>Time Value</code>s for playout purposes. For example,  in order to synchronise it with other data which was initially recorded at a different time.</li>
+</ul>
+</li>
+<li><strong>Time Shift</strong><ul>
+<li>Takes some original content and re-positions it to appear at a different time (modifying its <code>Time Value</code>s). It should maintain the original playback/recording rate and as such the same duration. This does not include changes of <code>Time Context</code>, or variable offsets to the <code>Time Value</code>s being applied.</li>
+</ul>
+</li>
+<li><strong>Variable Time Shift</strong><ul>
+<li>A Time Shift operation which includes a user control to modify the offset between the input and output <code>Flow</code>. This will modify the ancestry between individual <code>Data Object</code>s / <code>Time Value</code>s over the running time of a system.</li>
+<li>Note: Unlike a pure buffer, a traditional delay line modifies the implicit <code>Time Value</code>s in a sequence in order to change its relationship to time (and as a result match up with the timing of other sequences).</li>
+</ul>
+</li>
+<li><strong>Frame Synchroniser / Rate Conforming</strong><ul>
+<li>Creates a new <code>Flow</code> which is well aligned to a time grid where the input had an unintentional frequency or phase offset from the intended rate. This is likely to involve occasional frame drops or repeats, <code>Time Value</code> re-assignment, and potentially a <code>Time Context</code> change.</li>
+</ul>
+</li>
+<li><strong><code>Time Context</code> Re-Mapping</strong><ul>
+<li>Creates a copy of a <code>Flow</code> but with different <code>Time Value</code>s in a different <code>Time Context</code>.</li>
+</ul>
+</li>
+<li><strong>Content Analysis</strong><ul>
+<li>Performs an analysis operation on individual media elements or sequences, producing a data set which could be used by other operations. The data set has concrete references to the content which was analysed to produce the results.</li>
+</ul>
+</li>
+<li><strong>Amplify / Attenuate</strong><ul>
+<li>Applies a multiplier to an aspect of a piece of content.</li>
+</ul>
+</li>
+<li><strong>Video Crop / Zoom</strong><ul>
+<li>Selects a lower resolution image from within a larger one.</li>
+<li>Note: Assumes that the picture remains at its lower resolution and is not mixed with anything else (such as a black frame).</li>
+</ul>
+</li>
+<li><strong>Video Squeeze / Squash</strong><ul>
+<li>Reduces the resolution in one dimension only, modifying the aspect ratio whilst maintaining the original field of view.</li>
+<li>Note: Assumes that the picture remains at its lower resolution and is not mixed with anything else (such as a black frame).</li>
+</ul>
+</li>
+<li><strong>Conversion to Monochrome</strong><ul>
+<li>Generates a black and white signal from a colour one.</li>
+</ul>
+</li>
+<li><strong>EQ Modification</strong><ul>
+<li>Amplifies or attenuates using filters affecting particular frequency ranges.</li>
+<li>Note: a real EQ might result in a more complex end result.</li>
+</ul>
+</li>
+</ul>
+<h3 id="new-flow-id-same-source-id">New <code>Flow</code> ID, Same <code>Source</code> ID</h3>
+<p>These operations can be broadly summarised as performing one of the following actions:
+*   Content is adjusted in terms of quality
+*   Content is interpolated to fit a different playback rate</p>
+<p>The following operations make no changes to the content's <code>Time Value</code>s or <code>Time Context</code>. <code>Time Value</code>s must be carried through 1:1 from input to output. One exception to this is described under "Sample Rate Conversion" where the <code>Time Context</code> remains the same, but new (interpolated) <code>Time Value</code>s might need to be generated.</p>
+<ul>
+<li><strong>Audio / Video Bit Depth Modification</strong><ul>
+<li>Increases or decreases the number of bits available to store each sample.</li>
+</ul>
+</li>
+<li><strong>Chroma Subsampling Modification</strong><ul>
+<li>Changes the video from 4:4:4 to 4:2:2 subsampling or similar.</li>
+</ul>
+</li>
+<li><strong>Byte Packing Modification</strong><ul>
+<li>Converts between (for example) v210 and 10-bit planar, or between UYVY and YUY2, maintaining the original samples intact.</li>
+</ul>
+</li>
+<li><strong>Colorspace Conversion</strong><ul>
+<li>Converts between (for example) BT.2020 and BT.709.</li>
+</ul>
+</li>
+<li><strong>Dynamic Range Conversion</strong><ul>
+<li>Converts between (for example) HDR and SDR.</li>
+</ul>
+</li>
+<li><strong>Colour Encoding Conversion</strong><ul>
+<li>Converts between (for example) YUV and RGB.</li>
+</ul>
+</li>
+<li><strong>Video Resolution Modification</strong><ul>
+<li>For example a UHD to HD modification, maintaining the original aspect ratio.</li>
+</ul>
+</li>
+<li><strong>Encode / Decode</strong><ul>
+<li>Takes input content and produces an approximation of the input content which might or might not be an entirely reversible operation. The content represented should cover the same time period but might be reduced in spatial resolution. Includes the reverse operation.</li>
+</ul>
+</li>
+<li><strong>Sample Rate Conversion</strong><ul>
+<li>Takes time domain sampled content and produces a new output with a different sampling rate, but must convey the same content over exactly the same duration.</li>
+<li>Note: Includes video frame rate conversion (which might involve interpolation) but does not include time stretches such as 24Hz to 25Hz (where the same content is played back without modification but at a different rate and so the duration is modified). For these cases see "Slow Motion / Speed Up" and "Frame Synchroniser / Rate Conforming".</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-flow_1">1..*:1 <code>Flow</code></h2>
+<p><img alt="Combine" src="../images/3.1-Combine.png" /></p>
+<h3 id="new-flow-id-new-source-id_2">New <code>Flow</code> ID, New <code>Source</code> ID</h3>
+<p>In all of the following operations <code>Time Value</code>s at each input must match such that they can be carried through to the output consistently. If the <code>Time Value</code>s do not match up they must first be brought into line using an appropriate 1:1 operation.</p>
+<ul>
+<li><strong>Switch</strong><ul>
+<li>Produces an output which could take any of a number of inputs but can only ever consist of a single input's data at any one time.</li>
+<li>Note: This covers the case where we care about associating a single identity with the output <code>Flow</code>, recording editorial decisions. A more system-level operation such as re-tuning a receiver to handle a stream of a different <code>Flow</code> need not change its identity.</li>
+</ul>
+</li>
+<li><strong>Mix</strong><ul>
+<li>Combines multiple inputs to create a new output which is a composite of one or more of the inputs. This might be by performing Switch operations, or by blending a set of inputs together to produce an output which consists of multiple inputs' data at a single point in time. When blending inputs all of their <code>Time Value</code>s must match and the corresponding output <code>Data Object</code>s must be associated with the same <code>Time Value</code>.</li>
+<li>Note: This could include operations such as adding an image overlay to a video (DOG), or adding an inaudible watermark to a piece of audio.</li>
+</ul>
+</li>
+<li><strong>Combine</strong><ul>
+<li>Takes multiple pieces of input content which might consist of matching or differing essence formats and merges them into a single entity (a new <code>Flow</code>). For example, this might involve taking several individual audio channels and combining them into a single multi-channel representation, or combining video and audio into an SDI multiplex.</li>
+</ul>
+</li>
+<li><strong>Video Keying</strong><ul>
+<li>Takes a "key" and "fill" as inputs, merging them to produce a single output image which is a composite of the two.</li>
+</ul>
+</li>
+</ul>
+<h2 id="11-flow_2">1:1..* <code>Flow</code></h2>
+<p><img alt="Split" src="../images/3.1-Split.png" /></p>
+<h3 id="new-flow-ids-new-source-ids">New <code>Flow</code> IDs, New <code>Source</code> IDs</h3>
+<p>In the following operations the <code>Time Value</code>s for each output must match the corresponding <code>Data Object</code>'s <code>Time Value</code> from the input.</p>
+<ul>
+<li><strong>Split</strong><ul>
+<li>Takes input content which might consist of multiple components (for example, multiple audio channels or an SDI multiplex) and splits it into smaller units (for example, single audio channels or mono-essence components of a mux) without changing their timing relationship.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>
