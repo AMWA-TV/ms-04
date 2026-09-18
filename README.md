@@ -1,7 +1,8 @@
 # AMWA MS-04 NMOS Identity and Timing Model Specification
 
 [![Lint Status](https://github.com/AMWA-TV/ms-04/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/ms-04/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/AMWA-TV/ms-04/workflows/Render/badge.svg)](https://github.com/AMWA-TV/ms-04/actions?query=workflow%3ARender)
+[![Zensical Render Status](https://github.com/AMWA-TV/ms-04/actions/workflows/docs.yml/badge.svg)](https://github.com/AMWA-TV/ms-04/actions/workflows/docs.yml)
+[![Legacy Render Status](https://github.com/AMWA-TV/ms-04/workflows/Render/badge.svg)](https://github.com/AMWA-TV/ms-04/actions?query=workflow%3ARender)
 
 <!-- INTRO-START -->
 
