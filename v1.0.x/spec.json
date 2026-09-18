@@ -1,0 +1,28 @@
+{
+  "amwa_id": "MS-04",
+  "url": "https://specs.amwa.tv/ms-04",
+  "name": "ID & Timing Model",
+  "status": "AMWA Specification",
+  "repo_name": "ms-04",
+  "alt_repo_name": "nmos-id-timing-model",
+  "repo_url": "https://github.com/AMWA-TV/ms-04",
+  "releases": [
+    "v1.0.0"
+  ],
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "Documents a model for identity and timing that applies to AMWA NMOS specifications that apply to content",
+      "Builds on models of the JT-NM Reference Archicture"
+    ],
+    "why_does_it_matter": [
+      "Provides a basis for future specifications"
+    ],
+    "how_does_it_work": [
+      "Defines the main time-related entities used in NMOS specs",
+      "Provides further explanation of their meaning",
+      "Gives guidance on how they can be used for media operations"
+    ]
+  }
+}

@@ -1,0 +1,2188 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/ms-04/v1.0.x/3.3.%20Media%20Production%20Chains/">
+      
+      
+        <link rel="prev" href="../3.2.%20Composite%20Media%20Operations/">
+      
+      
+        <link rel="next" href="../4.0.%20Appendix%20-%20Commentary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>Media Production Chains - AMWA MS-04 NMOS Identity and Timing Model Specification</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#media-production-chains" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA MS-04 NMOS Identity and Timing Model Specification" class="md-header__button md-logo" aria-label="AMWA MS-04 NMOS Identity and Timing Model Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA MS-04 NMOS Identity and Timing Model Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Media Production Chains
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/ms-04" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/ms-04
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA MS-04 NMOS Identity and Timing Model Specification" class="md-nav__button md-logo" aria-label="AMWA MS-04 NMOS Identity and Timing Model Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA MS-04 NMOS Identity and Timing Model Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/ms-04" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/ms-04
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA MS-04 NMOS Identity and Timing Model Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.%20Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA MS-04 NMOS Identity and Timing Model Specification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0.%20Identity%20and%20Timing%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Identity and Timing Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1.%20Summary%20and%20Definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Identity and Timing Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2.%20Explanation%20-%20Source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash;Source
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3.%20Explanation%20-%20Flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash;Flow
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4.%20Explanation%20-%20Flow%20Representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash; Flow Representation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.5.%20Explanation%20-%20Timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation &ndash; Timing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.6.%20Extension%20-%20Ancestry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension &ndash; Ancestry
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.7.%20Extension%20-%20Grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension &ndash; Grouping
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0.%20Practical%20Guidance%20for%20Media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Practical Guidance for Media
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1.%20Basic%20Media%20Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Media Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2.%20Composite%20Media%20Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Composite Media Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Media Production Chains
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Media Production Chains
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Terminology
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Worked Examples
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-live-video-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simple Live Video &amp; Audio
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Live Video &amp; Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-studio-plus-outside-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live Studio Plus Outside Broadcast
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Studio Plus Outside Broadcast">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-studios-feeding-playout-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live Studios Feeding Playout Gallery
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Studios Feeding Playout Gallery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Remote Production
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.0.%20Appendix%20-%20Commentary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Appendix - Commentary
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Archive
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Archive
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Archive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Ancestry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ancestry
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Flow &ndash; defining &amp; understanding it
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/Source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Source &ndash; defining &amp; understanding it
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/definitions--Similarity-Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Similarity Cluster
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Core Model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Data_Object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Data Objects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--TDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Timed Data Structures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--TVI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of TVIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Time_Context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Time Contexts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/examples--Time_Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples of Time Values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/explanation-and-principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Explanation / Principles / Approach to designing the model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/media_operations--analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Purpose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/media_operations--summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Production Operations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/motivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Motivation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Data_Object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Data Objects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Similarity-Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Similarity Clusters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--TDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Timed Data Structures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--TVI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on TVIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Time_Context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Time Contexts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/notes--Time_Value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes on Time Values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/user-stories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Timing &amp; Identity User Stories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_24" id="__nav_16_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application notes
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_24">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Application notes
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Notes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/1-live-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Live Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/2-live-file-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Live &amp; File Playout Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/3-split-essence-synchronisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Split Essence Synchronisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/application_notes/4-api-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. API Access
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Terminology
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Worked Examples
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-live-video-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simple Live Video &amp; Audio
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Live Video &amp; Audio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-studio-plus-outside-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live Studio Plus Outside Broadcast
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Studio Plus Outside Broadcast">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-studios-feeding-playout-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live Studios Feeding Playout Gallery
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Studios Feeding Playout Gallery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Remote Production
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Objective
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Description
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-diagram_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Timing Diagram
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="media-production-chains">Media Production Chains</h1>
+<p>This document considers larger production systems constructed from various individual devices.</p>
+<p>The focus of this document is on timing and how the use of <code>Time Value</code>s created and carried by different pieces of equipment can be used to achieve synchronisation. In addition, it examines how <code>Time Value</code>s should be handled at specific system boundaries in order to achieve the expected outcomes.</p>
+<h2 id="terminology">Terminology</h2>
+<p>In order to ease explanation of how identity and timing apply to production chains, some common terms of reference are used. These are as follows:</p>
+<ul>
+<li><strong>Wall Clock:</strong> A timekeeping device which provides a consistent source of time to all media processing devices on the network.</li>
+<li><strong>Presentation Clock:</strong> A clock held within a media processing device which drives the output of media samples for presentation purposes. This might be calculated with reference to the Wall Clock and/or other inputs.</li>
+</ul>
+<h2 id="worked-examples">Worked Examples</h2>
+<p><strong>Key</strong></p>
+<p><img alt="Key" src="../images/3.3-Key.png" /></p>
+<h3 id="simple-live-video-audio">Simple Live Video &amp; Audio</h3>
+<p><img alt="Live A/V" src="../images/3.3-LiveAV.png" /></p>
+<h4 id="objective">Objective</h4>
+<p>Synchronise audio and video for display after passage through independent processing chains.</p>
+<p>In order to demonstrate the effects of delay in the processing chain the following delay figures are assumed:</p>
+<ul>
+<li>Camera imposes 40ms of delay</li>
+<li>Vision Mixer imposes 40ms of delay</li>
+<li>Display imposes 40ms of delay</li>
+<li>Microphone imposes 2.5ms of delay</li>
+<li>Audio Mixer imposes 7.5ms of delay</li>
+<li>Loudspeaker imposes 2.5ms of delay</li>
+</ul>
+<h4 id="description">Description</h4>
+<p>Video and audio are captured simultaneously by a camera and microphone respectively. The camera and microphone have access to a source of Wall Clock time which they use to generate <code>Time Value</code>s for each video frame and audio sample captured. These <code>Time Value</code>s are attached to their corresponding samples and persist with the content through the processing chain.</p>
+<p>Due to a higher latency in the video chain than the audio chain, the video is displayed late when compared with the audio.</p>
+<p>Each output device (display and loudspeaker) is fed with a source of Wall Clock time. By comparing the Wall Clock value with the <code>Time Value</code> of the incoming video or audio samples, a time difference can be calculated at each output device which corresponds to the latency incurred through the chain (including its own processing latency). By taking the largest of these calculated differences, a Presentation Clock can be derived as follows:</p>
+<p><code>Max Offset = MAX(Wall Clock - Time Value, Wall Clock - Time Value,...)</code></p>
+<p><code>Presentation Clock = Wall Clock + Max Offset</code></p>
+<p>Each output device can then be programmed with this Max Offset value in order to derive its own Presentation Clock. The device must then buffer content as it arrives until the Presentation Clock equals the content's <code>Time Value</code>. At this point the content can be released from the buffer and output synchronisation is achieved.</p>
+<h4 id="timing-diagram">Timing Diagram</h4>
+<p><img alt="Live A/V Timing Diagram" src="../images/3.3-LiveAVTiming.png" /></p>
+<p>Samples are captured by the camera and microphone at time zero on the diagram. The loudspeaker then has a large (107.5ms) delay imposed upon its Presentation Clock to ensure it outputs audio samples in time with the display.</p>
+<p>Note that as shown above, the audio mix is able to happen before the corresponding video samples are mixed given the level of delay imposed by the vision chain (mixes start at 2.5ms and 40ms respectively). By using end-to-end timing it is unnecessary to keep vision and audio in sync throughout the chain as long as the <code>Flow</code>s which are actually being combined are in sync with each other.</p>
+<h3 id="live-studio-plus-outside-broadcast">Live Studio Plus Outside Broadcast</h3>
+<p><img alt="Outside Broadcast" src="../images/3.3-OutsideBroadcast.png" /></p>
+<h4 id="objective_1">Objective</h4>
+<p>Synchronise audio and video for display after passage through independent processing chains. In addition, audio and video from a remote site must be mixed and presented in sync.</p>
+<p>In order to demonstrate the effects of delay in the processing chain the following delay figures are assumed:</p>
+<ul>
+<li>Cameras impose 40ms of delay</li>
+<li>Vision Mixer imposes 40ms of delay</li>
+<li>Display imposes 40ms of delay</li>
+<li>Microphones impose 2.5ms of delay</li>
+<li>Audio Mixer imposes 7.5ms of delay</li>
+<li>Loudspeaker imposes 2.5ms of delay</li>
+<li>Outside Broadcast network transit imposes 120ms of delay</li>
+</ul>
+<h4 id="description_1">Description</h4>
+<p>The Studio and Outside Broadcast share a common time reference through the use of GPS or a similar mechanism. Each captured video frame or audio sample has a <code>Time Value</code> attached to it which is derived from a Wall Clock reference in each location.</p>
+<p>Studio-based audio and video pass directly to the audio and vision mixing processes respectively. Audio and video from the remote location incur additional latency prior to reaching the mixing stage due to the speed of light between the two locations.</p>
+<p>In order to permit mixing in sync, the Outside Broadcast <code>Flow</code>s must undergo re-timing as they enter the Studio environment. This re-timing action results in the generation of a new <code>Source</code> ID and new <code>Flow</code> ID for the content before it is mixed.</p>
+<p>Once mixing has been achieved, the audio and video must be presented in sync via a display and loudspeaker using the Presentation Clock mechanism defined in the previous example.</p>
+<h4 id="timing-diagram_1">Timing Diagram</h4>
+<p>Two timing diagrams are shown below in order to illustrate what would happen with and without the re-timing component at the Studio boundary.</p>
+<p><img alt="Outside Broadcast Timing Diagram 1" src="../images/3.3-OutsideBroadcastTiming1.png" /></p>
+<p>The timing diagram above illustrates the system timing when no re-timing is performed. In this case, when the Outside Broadcast camera captures a video frame with a <code>Time Value</code> of zero, the Studio camera also captures a video frame with a <code>Time Value</code> of zero. Due to the network link latency to the Outside Broadcast site, the Studio's camera <code>Flow</code> must be delayed until the corresponding video frame from the Outside Broadcast arrives and can be mixed in sync.</p>
+<p>It is important to note that the Studio and Outside Broadcast cameras cannot be mixed out of sync for two reasons:</p>
+<ol>
+<li>It would be unclear which <code>Time Value</code> the vision mixer should persist into its output <code>Flow</code> if its inputs differed.</li>
+<li>By mixing <code>Flow</code>s out of sync, the relative relationship between the Outside Broadcast's video and audio <code>Flow</code>s would be lost.</li>
+</ol>
+<p>The major issue with this approach is that the Studio's timing becomes strongly coupled to the Outside Broadcast. If a second Outside Broadcast were started mid-way through a programme and this had an even longer network latency then the Studio's vision and audio mix processes would have to be further delayed resulting in repeated frames and audio glitches.</p>
+<p><img alt="Outside Broadcast Timing Diagram 2" src="../images/3.3-OutsideBroadcastTiming2.png" /></p>
+<p>The solution to the previous timing problem is to introduce a re-timing component at the Studio edge. This generates new <code>Time Value</code>s for the content arriving from the Outside Broadcast using the Studio's <code>Time Context</code>. By doing this, the video frame which was given a <code>Time Value</code> of zero at the Outside Broadcast location is re-written to a <code>Time Value</code> of 120. This allows it to be synchronised immediately with the next available frame from the Studio camera. By modifying the Outside Broadcast's video and audio samples by exactly the same period of time their relatively synchronisation is maintained.</p>
+<p>An alternative approach to the external re-timing device would be to perform this re-timing operation within the vision and audio mixers. In this approach these independent devices must be carefully co-ordinated to ensure that the time offset applied to the vision and audio from the Outside Broadcast is identical.</p>
+<h3 id="live-studios-feeding-playout-gallery">Live Studios Feeding Playout Gallery</h3>
+<p><img alt="Live Playout" src="../images/3.3-LivePlayout.png" /></p>
+<h4 id="objective_2">Objective</h4>
+<p>Synchronise audio and video for display after passage through two independent studios, followed by a presentation mix chain. Note that in order to simplify the explanation, only the vision chain is shown in the timing diagram below.</p>
+<p>In order to demonstrate the effects of delay in the processing chain the following delay figures are assumed:</p>
+<ul>
+<li>Cameras impose 40ms of delay</li>
+<li>Studio A Vision Mixer imposes 40ms of delay</li>
+<li>Studio B Vision Mixer imposes 80ms of delay</li>
+<li>Playout Gallery Vision Mixer imposes 40ms of delay</li>
+</ul>
+<h4 id="description_2">Description</h4>
+<p>Video and audio are captured simultaneously by a camera and microphone respectively in each studio. The camera and microphone have access to a source of Wall Clock time which they use to generate <code>Time Value</code>s for each video frame and audio sample captured. These <code>Time Value</code>s are attached to their corresponding samples and persist with the content through the processing chain.</p>
+<p>The Studio A vision and audio arrive in the Playout Gallery before the corresponding samples from Studio B &ndash; this is due to a higher latency in Studio B's processing chain.</p>
+<p>In order to permit mixing in sync, the input <code>Flow</code>s from the Studios must undergo re-timing as they enter the Playout Gallery environment. This re-timing action results in the generation of a new <code>Source</code> ID and new <code>Flow</code> ID for the content before it is mixed.</p>
+<p>Once mixing has been achieved, the audio and video must be presented in sync via a display and loudspeaker using the Presentation Clock mechanism defined in the first example.</p>
+<h4 id="timing-diagram_2">Timing Diagram</h4>
+<p><img alt="Live Playout Timing Diagram" src="../images/3.3-LivePlayoutTiming.png" /></p>
+<p>The diagram above illustrates the re-timing action required in this scenario &ndash; it is broadly similar to the re-timing performed in the Outside Broadcast scenario (refer to the second timing diagram in the Outside Broadcast scenario which covers the use of the re-timing component). A key difference here is that the two Studios and the Playout Gallery might be operating in the same <code>Time Context</code> with access to the same Wall Clock. This is a key example of end-to-end timing only being relevant within certain bounds.</p>
+<p>The re-timing devices in this example re-write the <code>Time Value</code>s arriving from the Studios (whatever these values are) to approximately the current Wall Clock value. This makes them most appropriate for consumption by the next device in the chain. As with the Outside Broadcast scenario it is important to ensure that the relative timing relationship between the video and audio from each Studio is maintained.</p>
+<p>As in the Outside Broadcast scenario, without this re-timing action the <code>Flow</code> arriving earliest must be delayed to wait for the <code>Flow</code> from the other Studio thereby delaying the Playout Gallery output. This would mean that the Playout Gallery timing becomes strongly coupled to the latencies of the processing chains in the Studios; therefore it would be problematic for the Playout Gallery to accept an input from an additional Studio with a higher latency processing chain.</p>
+<h3 id="remote-production">Remote Production</h3>
+<p><img alt="Remote Production" src="../images/3.3-RemoteProduction.png" /></p>
+<h4 id="objective_3">Objective</h4>
+<p>Capture video at an Outside Broadcast location in high quality (HQ) and low quality (Proxy) versions. Produce a mix based upon the low quality version at a Studio facility, before instructing the Outside Broadcast site to re-produce this mix precisely and forward it on to the Studio.</p>
+<p>Note: The intention is to avoid sending each individual high quality camera <code>Flow</code> back to the Studio but instead send back individual low quality versions and a single high quality finished programme output.</p>
+<p>In order to demonstrate the effects of delay in the processing chain the following delay figures are assumed:</p>
+<ul>
+<li>Cameras impose 40ms of delay</li>
+<li>Vision Mixers impose 40ms of delay</li>
+<li>Displays impose 40ms of delay</li>
+<li>Outside Broadcast network transit imposes 20ms of delay in both directions</li>
+</ul>
+<h4 id="description_3">Description</h4>
+<p>Video is captured simultaneously by Outside Broadcast cameras. The cameras have access to a source of Wall Clock time which they use to generate a <code>Time Value</code> for each video frame captured. These <code>Time Value</code>s are attached to their corresponding samples and persist with the content through the processing chain.</p>
+<p>Low quality (Proxy) <code>Flow</code>s are sent to the Studio facility in order to produce a mix, whilst high quality (HQ) <code>Flow</code>s remain at the Outside Broadcast site for later processing. Once the edit decisions have been relayed from the Studio facility, the high quality <code>Flow</code>s can be mixed in the same way and transmitted on.</p>
+<p>Identity in this scenario is critical. The camera HQ and Proxy <code>Flow</code>s share a <code>Source</code> ID and <code>Time Value</code>s which ensures that the Proxy edit can be re-created precisely at the Outside Broadcast location (using the HQ <code>Flow</code>s) prior to being sent back to the Studio facility.</p>
+<h4 id="timing-diagram_3">Timing Diagram</h4>
+<p><img alt="Remote Production Timing Diagram" src="../images/3.3-RemoteProductionTiming.png" /></p>
+<p>The diagram above shows that in this scenario it is unnecessary to modify any <code>Time Value</code>s before they are used. However, at the Outside Broadcast location it is important to delay the HQ camera feeds from entering the vision mixer until the edit decisions on the low quality Proxy content have been relayed back from the Studio.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>
